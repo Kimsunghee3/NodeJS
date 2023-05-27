@@ -10,6 +10,6 @@ const list = [
     }
 ]
 
-module.exports = list
+console.log(list)
 
 

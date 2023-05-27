@@ -6,3 +6,5 @@ const list = [
         hit:0
     }
 ]
+
+console.log(list)
