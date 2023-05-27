@@ -10,7 +10,29 @@ Linux 환경에서 설치한다.
 매년 2개의 버전이 증가하는데 상위 버전이 필요할 때가 있고
 하위 버전을 사용해야 할 때가 있을 때 버전을 쉽게 관리해주는 도구이다.
 ```sh
-$ 
+$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
+```
+
+### source 
+터미널을 재실행 하지 않고 파일을 읽어준다.
+```sh
+$ source 파일명
+```
+
+
+### nvm --version
+NVM의 버전을 확인할 수 있는 명령어이다.
+터미널에 nvm --version을 했을 때 버전 확인이 되면 정상적으로 설치가 된 것이다.
+```sh
+$ nvm --version
+```
+
+
+### node --version
+Node의 버전을 확인할 수 있는 명령어이다.
+터미널에 node --version 입력 후 버전 확인이 되면 정상적으로 설치가 된 것이다.
+```sh
+$ node --version
 ```
 
 
