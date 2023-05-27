@@ -27,12 +27,45 @@ NVM의 버전을 확인할 수 있는 명령어이다.
 $ nvm --version
 ```
 
+### nvm list
+설치할 수 있는 버전에 대한 목록을 확인할 수 있는 명령어이다.
+```sh
+$ nvm list
+```
+
+
+### nvm install --lts
+lts버전에 대해서 설치하겠다는 의미이다.
+```sh
+$ nvm install --lts
+```
+
 
 ### node --version
 Node의 버전을 확인할 수 있는 명령어이다.
 터미널에 node --version 입력 후 버전 확인이 되면 정상적으로 설치가 된 것이다.
 ```sh
 $ node --version
+```
+
+
+### NodeJS
+- 이벤트 기반
+- 논 브로킹 I/O
+> 프로세스와 스레드
+
+
+### REPL
+>R(Read) 읽고 
+>E(Evaluate) 평가하고
+>P(Print) 출력
+>L(Loop) 반복
+
+
+### node
+REPL모드로 진입하게 된다.
+```sh
+$ node
 ```
 
 
