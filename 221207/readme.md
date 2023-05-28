@@ -18,3 +18,10 @@ TCP, UDP
 ### tcpserver, client구축
 NodeJS환경에서 구축한다.
 내장모듈 net을 사용한다.
+
+### 기본셋팅
+```sh
+# yes옵션을 주고 package.json을 생성한다
+$ npm init -y
+```
+
