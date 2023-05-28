@@ -45,3 +45,10 @@ NodeJS에서 제공해주는 내장모듈을 보다 편리하게 사용하기 �
 
 ### node_modules
 설치를 하게 되면 node_modules라는 디렉토리가 생성되게 되는데, 
+
+
+### express
+```sh
+$ npm install [패키지명]
+$ npm install express
+```
