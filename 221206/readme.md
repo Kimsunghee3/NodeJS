@@ -38,3 +38,5 @@ node의 특성상 node가 실행해주기 때문에 global객체는 데이터 �
 - fs
 - path
 
+
+### 외장모듈
