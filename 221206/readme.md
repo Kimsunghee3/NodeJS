@@ -31,3 +31,10 @@ node의 특성상 node가 실행해주기 때문에 global객체는 데이터 �
 
 이러한 것들을 순환참조라고 한다.
 
+
+### 내장모듈
+- buffer
+- stream
+- fs
+- path
+
