@@ -1,2 +1,3 @@
-require("./list2")
-// console.log(data)
+const a = require("./list2")
+console.log(a)
+
