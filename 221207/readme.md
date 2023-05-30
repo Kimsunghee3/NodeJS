@@ -1,6 +1,12 @@
 ### Network
 osi 7계층
 
+### sh
+
+
+### kernel
+
+
 ### 식별자
 
 
