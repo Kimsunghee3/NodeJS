@@ -5,15 +5,17 @@ const PORT = process.env.SERVER_PORT || 3000
 const HOST = process.env.SERVER_HOST || "127.0.0.1"
 
 const body = Buffer.from(`<h1>Hello world!!</h1>`)
+// 편지의 겉면이라고 생각
 const response = `HTTP/1.1 200 ok
 Connection: keep-alive
 keep-Alive: timeout=5
 Content-type: text/html
-Content-length: ${body.length}
+Content-length: ${body.length} 
 
+// 편지의 내용물
+// 실제로 던져줄 데이터들
 ${body.toString()}
 `
-
 
 // net.createServer(): 소켓을 열겠다, 포트를 열어주겠다는 의미이다.
 // 첫번째 콜백함수: server가 client에 connection을 맺기 위한 용도
@@ -31,9 +33,8 @@ const server = net.createServer((client) => {
         console.log(data.toString("hex")) // eb8db0ec9db4ed84b020eca084ec86a1
         console.log(data.toString("utf8")) // 데이터 전송
 
-        client.write("데이터를 정상적으로 받았습니다.")
+        client.write(response)
     })
-
 
 
     // client로부터 연결이 종료되었다.
