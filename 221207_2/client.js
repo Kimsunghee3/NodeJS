@@ -12,7 +12,11 @@ socket.on("connect", () => {
 
     // server에서 내용이 buffer로 받아짐
     // <Buffer eb 8d b0 ec 9d b4 ed 84 b0 20 ec a0 84 ec 86 a1>
+    // connection이 맺어지면서 socket.write가 전달된다.
     socket.write("데이터 전송")
 })
 
-
+socket.on("data", (chunk) => {
+    console.log(`Received: ${chunk}`)
+    socket.end()
+})

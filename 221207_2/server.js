@@ -1,8 +1,19 @@
 const net = require('net')
 // 환경변수에 SERVER_PORT에 대한 내용이 있으면 가져다 쓰고, 없는 경우 3000번을 사용한다.
-const PORT = process.env.SERVER_PORT | 3000
+const PORT = process.env.SERVER_PORT || 3000
 // 환경변수에 SERVER_HOST에 대한 내용이 있으면 가져다 쓰고, 없는 경우 127.0.0.1을 사용한다.
 const HOST = process.env.SERVER_HOST || "127.0.0.1"
+
+const body = Buffer.from(`<h1>Hello world!!</h1>`)
+const response = `HTTP/1.1 200 ok
+Connection: keep-alive
+keep-Alive: timeout=5
+Content-type: text/html
+Content-length: ${body.length}
+
+${body.toString()}
+`
+
 
 // net.createServer(): 소켓을 열겠다, 포트를 열어주겠다는 의미이다.
 // 첫번째 콜백함수: server가 client에 connection을 맺기 위한 용도
@@ -19,7 +30,11 @@ const server = net.createServer((client) => {
         // toString: 데이터를 인코딩하기 위함, 인자로는 어떤 형식으로 인코딩할지에 대해서 넣어줌
         console.log(data.toString("hex")) // eb8db0ec9db4ed84b020eca084ec86a1
         console.log(data.toString("utf8")) // 데이터 전송
+
+        client.write("데이터를 정상적으로 받았습니다.")
     })
+
+
 
     // client로부터 연결이 종료되었다.
     client.on("close", () => {
