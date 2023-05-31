@@ -8,12 +8,17 @@ const HOST = process.env.SERVER_HOST || "127.0.0.1"
 // 첫번째 콜백함수: server가 client에 connection을 맺기 위한 용도
 // 두번째 콜백함수: client가 server쪽에 데이터들을 보냈을 때 실행된다. 
 const server = net.createServer((client) => {
+    // client에서 데이터를 받을 때 기본셋팅을 utf8로 설정하겠다.
+    client.setEncoding("utf8")
     // Buffer 2진수데이터
     // 16진수 데이터를 글자셋
     // 문자집합 utf8(유니코드)
     client.on("data", (data) => {
         // client로부터 받은 데이터를 출력
-        console.log(data)
+        console.log(data) // DataType Buffer
+        // toString: 데이터를 인코딩하기 위함, 인자로는 어떤 형식으로 인코딩할지에 대해서 넣어줌
+        console.log(data.toString("hex")) // eb8db0ec9db4ed84b020eca084ec86a1
+        console.log(data.toString("utf8")) // 데이터 전송
     })
 
     // client로부터 연결이 종료되었다.
