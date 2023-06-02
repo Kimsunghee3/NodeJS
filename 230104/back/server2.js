@@ -27,7 +27,7 @@ app.post("/comments", async(req,res,next) => {
         const [{ insertId }] = await mysql.query(sql)
         const [[ response ]] = await mysql.query(`SELECT id, userid, content, DATE_FORMAT(register, '%Y-%m-$d')as register FROM Comment WHERE id=${insertId}`)
         response.updated = false
-        res.json(response)
+        res.cookie().json(response)
     }catch(e){
         next(e)
     }
