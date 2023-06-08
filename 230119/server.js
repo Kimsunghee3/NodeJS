@@ -36,13 +36,13 @@ app.post('/signup', async (req,res) => {
     const response = await request.post("/users", {
         ...req.body
     })
-    const { userid, username, userpw } = response.data
+    console.log(response)
 
-    res.redirect(`/user/welcome.html?userid=${response}&username=${username}&userpw=${userpw}`)
+    res.redirect("/user/welcome.html")
 })
 
-app.get("/welcome", async(req,res) => {
-    const { userid, userpw, username } = await req.query
+app.get("/welcome", (req,res) => {
+    const { userid, userpw, username } = req.query
     res.render("user/welcome.html", {
         userid, 
         userpw,
