@@ -29,14 +29,25 @@ app.get("/signup", (req,res) => {
     res.render("user/signup.html")
 })
 
-app.post('/signup', async(req,res) => {
+app.post('/signup', async (req,res) => {
     console.log(req.body)
     // request에 path를 설정해주었으므로
     // http://127.0.0.1:3000/users로 post요청을 하게된다.
     const response = await request.post("/users", {
-        ...req.body,
+        ...req.body
     })
-    console.log(response)
+    const { userid, username, userpw } = response.data
+
+    res.redirect(`/user/welcome.html?userid=${response}&username=${username}&userpw=${userpw}`)
+})
+
+app.get("/welcome", async(req,res) => {
+    const { userid, userpw, username } = await req.query
+    res.render("user/welcome.html", {
+        userid, 
+        userpw,
+        username
+    })
 })
 
 app.listen(3005, () => {
